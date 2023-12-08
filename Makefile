@@ -29,7 +29,7 @@ lint: ## Lint the source code
 .PHONY: lint
 
 run: ## Run the development Django server
-	echo "Not implemented"
+	poetry run python -m app.cmd run-parser
 .PHONY: run
 
 compose-up: ## Run the development Django server with docker-compose

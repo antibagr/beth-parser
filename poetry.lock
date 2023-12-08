@@ -1205,6 +1205,17 @@ files = [
 ]
 
 [[package]]
+name = "nest-asyncio"
+version = "1.5.8"
+description = "Patch asyncio to allow nested event loops"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "nest_asyncio-1.5.8-py3-none-any.whl", hash = "sha256:accda7a339a70599cb08f9dd09a67e0c2ef8d8d6f4c07f96ab203f2ae254e48d"},
+    {file = "nest_asyncio-1.5.8.tar.gz", hash = "sha256:25aa2ca0d2a5b5531956b9e273b45cf664cae2b145101d73b86b199978d48fdb"},
+]
+
+[[package]]
 name = "numpy"
 version = "1.26.2"
 description = "Fundamental package for array computing in Python"
@@ -1311,7 +1322,10 @@ files = [
 ]
 
 [package.dependencies]
-numpy = {version = ">=1.23.2,<2", markers = "python_version == \"3.11\""}
+numpy = [
+    {version = ">=1.23.2,<2", markers = "python_version == \"3.11\""},
+    {version = ">=1.26.0,<2", markers = "python_version >= \"3.12\""},
+]
 python-dateutil = ">=2.8.2"
 pytz = ">=2020.1"
 tzdata = ">=2022.1"
@@ -1397,13 +1411,13 @@ files = [
 
 [[package]]
 name = "platformdirs"
-version = "4.0.0"
+version = "4.1.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "platformdirs-4.0.0-py3-none-any.whl", hash = "sha256:118c954d7e949b35437270383a3f2531e99dd93cf7ce4dc8340d3356d30f173b"},
-    {file = "platformdirs-4.0.0.tar.gz", hash = "sha256:cb633b2bcf10c51af60beb0ab06d2f1d69064b43abf4c185ca6b28865f3f9731"},
+    {file = "platformdirs-4.1.0-py3-none-any.whl", hash = "sha256:11c8f37bcca40db96d8144522d925583bdb7a31f7b0e37e3ed4318400a8e2380"},
+    {file = "platformdirs-4.1.0.tar.gz", hash = "sha256:906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"},
 ]
 
 [package.extras]
@@ -1728,17 +1742,18 @@ files = [
 
 [[package]]
 name = "pygments"
-version = "2.16.1"
+version = "2.17.2"
 description = "Pygments is a syntax highlighting package written in Python."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "Pygments-2.16.1-py3-none-any.whl", hash = "sha256:13fc09fa63bc8d8671a6d247e1eb303c4b343eaee81d861f3404db2935653692"},
-    {file = "Pygments-2.16.1.tar.gz", hash = "sha256:1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"},
+    {file = "pygments-2.17.2-py3-none-any.whl", hash = "sha256:b27c2826c47d0f3219f29554824c30c5e8945175d888647acd804ddd04af846c"},
+    {file = "pygments-2.17.2.tar.gz", hash = "sha256:da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"},
 ]
 
 [package.extras]
 plugins = ["importlib-metadata"]
+windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "pymongo"
@@ -2529,5 +2544,5 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "3.11.4"
-content-hash = "fc58e5f2fa7b1b35e9089d5ea9a08fca5cdbb8cf1db2ad5d96d355824bb9bc12"
+python-versions = "^3.11.4"
+content-hash = "8850bcb2a81198f2381e1cfa35becb9c345c15e251f184184e3c7f21e34ac2a5"
